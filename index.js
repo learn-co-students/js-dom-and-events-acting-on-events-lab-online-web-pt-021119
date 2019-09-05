@@ -5,3 +5,14 @@ function preventRefreshOnSubmit(){
 }
 
 preventRefreshOnSubmit()
+
+function retrieveEmployeeInformation() {
+  return document.querySelector('input').value
+}
+
+function addNewElementAsLi() {
+  const ul = document.querySelector('ul');
+  const li = document.createElement('li');
+  li.innerHTML = retrieveEmployeeInformation();
+  ul.appendChild(li);
+}
