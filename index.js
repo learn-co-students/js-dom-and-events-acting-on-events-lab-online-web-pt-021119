@@ -5,3 +5,12 @@ function preventRefreshOnSubmit(){
 }
 
 preventRefreshOnSubmit()
+
+function retrieveEmployeeInformation(){
+	const tField = document.getElementsByTagName('input')[0]
+	return tField.value
+}
+
+function addNewElementAsLi(employeeName){
+	jQuery('ul.employee-list').append(`<li>${employeeName}</li>`)
+}
