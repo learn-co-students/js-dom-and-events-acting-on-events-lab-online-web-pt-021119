@@ -18,6 +18,8 @@ describe('index', () => {
   describe('addNewLiOnClick()', () => {
     it('adds the employee name as an li element on click', () => {
 
+      expect(document.querySelector('.employee-list').innerHTML).not.to.include('Fred');
+
       let submit = document.querySelector('input[type="submit"]')
       let event = new MouseEvent('click', {
         'view': window,
@@ -27,9 +29,8 @@ describe('index', () => {
       document.querySelector('input').value = 'Fred'
 
       submit.dispatchEvent(event)
-      expect(document.querySelector('.employee-list').innerHTML).not.to.include('Fred')
+
       addNewLiOnClick()
-      submit.dispatchEvent(event)
       expect(document.querySelector('.employee-list').innerHTML).to.include('Fred')
     })
 
