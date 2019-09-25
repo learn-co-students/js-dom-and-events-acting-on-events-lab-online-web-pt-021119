@@ -12,5 +12,15 @@ function addNewElementAsLi(){
   let node = document.createElement("li");                 
   let textnode = document.createTextNode(retrieveEmployeeInformation()); 
   node.appendChild(textnode); 
-  document.querySelector('input').appendChild(node);
+  document.querySelector('.employee-list').appendChild(node);
+  document.querySelector('input').value = "";
+}
+
+function addNewLiOnClick(){
+  document.querySelector('a').addEventListener("click", addNewElementAsLi());
+}
+
+function clearEmployeeListOnLinkClick(){
+  let e = document.querySelector('a').addEventListener('click', function(){document.querySelector('ul').innerHTML = "";}); 
+  return e;
 }
